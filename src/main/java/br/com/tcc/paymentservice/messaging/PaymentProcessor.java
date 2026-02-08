@@ -27,7 +27,7 @@ public class PaymentProcessor {
     @Inject
     @Channel("payment-failed") Emitter<PaymentFailedEvent> failEmitter;
 
-    @Incoming("inventory-reserved-in")
+    @Incoming("inventory-reserved")
     public void processInventoryReserved(InventoryReservedEvent event) {
         LOG.infof("Processando pagamento do pedido %s", event.orderId());
 
